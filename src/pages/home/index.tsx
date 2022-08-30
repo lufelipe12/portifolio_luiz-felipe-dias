@@ -1,15 +1,15 @@
 // Styles
-import { Container } from "@/styles/Global";
-import { Text } from "@/styles/Text";
-import { Button } from "@/styles/Buttons";
+import { Container } from "@/styles/Global"
+import { Text } from "@/styles/Text"
+import { Button } from "@/styles/Buttons"
 
 // Components
-import { Stack } from "@/components/Stack";
-import { Project } from "@/components/Project";
+import { Stack } from "@/components/Stack"
+import { Project } from "@/components/Project"
 
 // Data
-import { stackData } from "@/utils/stackData";
-import { userData } from "@/utils/userData";
+import { stackData } from "@/utils/stackData"
+import { userData } from "@/utils/userData"
 
 // Page Style
 import {
@@ -22,8 +22,7 @@ import {
   ProjectsAreaSocialMediaMessage,
   ProjectsAreaContent,
   ProjectAreaWrapperColumns,
-} from "./style";
-
+} from "./style"
 
 export const Home = (): JSX.Element => {
   return (
@@ -35,9 +34,12 @@ export const Home = (): JSX.Element => {
               Criando experiências por meio da tecnologia{" "}
             </Text>
             <Text type="body1" color="grey6">
-              Sou estudante de programação na Kenzie Academy Brasil, participei
-              de diversos projetos resolvendo problemas de alto nível e
-              desenvolvendo habilidades
+              Formado em biotecnologia pela Universidade Federal de Uberlândia e
+              atual desenvolvedor web fullstack. Iniciei em 2021 um bootcamp de
+              programação pela Kenzie Academy Brasil e me apaixonei pela área.
+              Tecnologia e inovação me fascinam, fortalecendo minha busca por
+              conhecimento nessa área tão vasta. Trabalhando com foco, respeito
+              e dedicação!
             </Text>
             <HeaderButtonsArea>
               <Button as="a" href="#projetos">
@@ -53,7 +55,7 @@ export const Home = (): JSX.Element => {
       <StackSection id="tecnologias">
         <Container>
           <Text as="h4" type="heading3" color="grey1">
-            Ferramentas que domino
+            Tecnologias de minha stack
           </Text>
           <StackCards>
             {stackData.map((stack, index) => (
@@ -88,11 +90,11 @@ export const Home = (): JSX.Element => {
                 Projetos
               </Text>
               <Text as="h3" type="heading2" color="grey1">
-                Originalidade e{" "}
+                Projetos mais{" "}
                 <Text as="span" color="brand1" type="heading2">
-                  dedicação
+                  importantes
                 </Text>{" "}
-                em cada detalhe
+                em minha trajetória.
               </Text>
               <Project />
             </ProjectsAreaContent>
@@ -100,5 +102,5 @@ export const Home = (): JSX.Element => {
         </Container>
       </ProjectsArea>
     </main>
-  );
-};
+  )
+}
