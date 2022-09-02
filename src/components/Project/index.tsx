@@ -5,47 +5,16 @@ import {
   ProjectLink,
   ProjectLinks,
 } from "./style"
+import { repositories } from "@/utils/projects"
 
 import { Text } from "@/styles/Text"
-import { useEffect, useState } from "react"
 import { FaGithub, FaShare } from "react-icons/fa"
-import { userData } from "@/utils/userData"
-
-interface ReposType {
-  id: number
-  name: string
-  language: string
-  description: string
-  git_url: string
-  homepage: string
-}
 
 export const Project = (): JSX.Element => {
-  const [repositories, setRepositories] = useState<ReposType[]>([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data: Response = await fetch(
-        `https://api.github.com/users/${userData.githubUser}/repos`
-      )
-
-      const json = await data.json()
-
-      setRepositories(json)
-
-      if (!data.ok) {
-        throw data
-      }
-
-      return json
-    }
-    fetchData()
-  }, [])
-
   return (
     <>
-      {repositories?.map((repository) => (
-        <ProjectWrapper key={repository.id}>
+      {repositories.map((repository, index) => (
+        <ProjectWrapper key={index}>
           <Text
             as="h2"
             type="heading3"
@@ -70,9 +39,14 @@ export const Project = (): JSX.Element => {
             {repository.description}
           </Text>
           <ProjectLinks>
-            <ProjectLink target="_blank" href={repository.git_url}>
+            <ProjectLink target="_blank" href={repository.gitUrl}>
               <FaGithub /> Github Code
             </ProjectLink>
+            {repository.homepage && (
+              <ProjectLink target="_blank" href={repository.homepage}>
+                <FaShare /> Aplicação
+              </ProjectLink>
+            )}
           </ProjectLinks>
         </ProjectWrapper>
       ))}
