@@ -35,7 +35,7 @@ export const Home = (): JSX.Element => {
             </Text>
             <Text type="body1" color="grey6">
               Formado em biotecnologia pela Universidade Federal de Uberlândia e
-              atual desenvolvedor web fullstack. Iniciei em 2021 um bootcamp de
+              atual desenvolvedor web fullstack. Iniciei em 2021 um curso de
               programação pela Kenzie Academy Brasil e me apaixonei pela área.
               Tecnologia e inovação me fascinam, fortalecendo minha busca por
               conhecimento nessa área tão vasta. Trabalhando com foco, respeito
